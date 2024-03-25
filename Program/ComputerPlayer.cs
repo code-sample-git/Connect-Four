@@ -6,11 +6,11 @@ public class ComputerPlayer : Player
 
     public ComputerPlayer(string name, char discSymbol) : base(name, discSymbol)
     {
-        //To be implement. Initialize the random number generator
+        random = new Random();
     }
 
     public override int MakeMove()
     {
-        // To be implemented. How does the computer player decide which column to place their disc?
+        return random.Next(GameBoard.Columns);
     }
 }
