@@ -13,12 +13,25 @@ public class GameBoard
 
     private void InitializeBoard()
     {
-        //To be implement. Initialize the game board with empty cells
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+                if (j % 8 == 0)
+                {
+                    board[i, j] = '|';
+                }
+                else
+                {
+                    board[i, j] = '*';
+                }
+            }
+        }
     }
 
-    public bool AddDisc(int column, char disc)
+    public bool AddDisc(int column, char disc, char board, String playerName)
     {
-        //To be implement. Add a disc to the game board
+        
     }
 
     public bool CheckForWin(char disc)
