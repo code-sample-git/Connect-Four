@@ -3,8 +3,8 @@ using System;
 public class GameController
 {
     private GameBoard gameBoard;
-    private Player player1;
-    private Player player2;
+    public Player DiscSymbol;
+    public Player playerName;
     private Player currentPlayer;
 
     public GameController()

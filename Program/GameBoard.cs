@@ -30,7 +30,7 @@ public class GameBoard
         }
     }
 
-    public bool AddDisc(int column, char disc)
+    public bool AddDisc(int column, char disc, char board, String playerName)
     {
         if (column <= 0 || column > 7)
         {
