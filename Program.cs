@@ -24,6 +24,7 @@
             {
                 playAgain = true;
                 gameController = new GameController(); // Re-initialize the game controller for a new game
+                gameController.InitializePlayers();
                 gameController.StartGame();
             }
             else

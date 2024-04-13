@@ -30,11 +30,11 @@ public class GameController
 
             player2 = new HumanPlayer("Player 2", 'O');
         }
-        else if(playerChoice == "Human vs AI")
+        else if(playerChoice == "2")
         {
             Console.WriteLine("You have chosen Human Vs AI");
 
-            player2 = new HumanPlayer("Computer", 'O');
+            player2 = new ComputerPlayer("Computer", 'O');
         }
         currentPlayer = player1;
     }
@@ -68,7 +68,6 @@ public class GameController
                 }
             }
         }
-       //To be implement. Start the game and handle the game loop
     }
 
     private void SwitchPlayer()
