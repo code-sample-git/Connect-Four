@@ -5,6 +5,8 @@ public class GameController
     private GameBoard gameBoard;
     public Player DiscSymbol;
     public Player playerName;
+    private Player player1;
+    private Player player2;
     private Player currentPlayer;
 
     public GameController()
@@ -35,7 +37,6 @@ public class GameController
             player2 = new HumanPlayer("Computer", 'O');
         }
         currentPlayer = player1;
-        //To be implement. Let the user choose the game mode (Human vs Human, Human vs AI, AI vs AI)
     }
 
     public void StartGame()
