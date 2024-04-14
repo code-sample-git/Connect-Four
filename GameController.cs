@@ -30,16 +30,40 @@ public class GameController
         if (playerChoice == "1")
         {
             Console.WriteLine("You have chosen Human Vs Human");
+            Console.WriteLine("Please enter the name of Player 1");
+            string player1Name = Console.ReadLine();
+            while(player1Name == "")
+            {
+                Console.WriteLine("Name cannot be empty. Please enter the name of Player 1");
+                player1Name = Console.ReadLine();
+            }
 
-            player1 = new HumanPlayer("Player 1", 'X');
-            player2 = new HumanPlayer("Player 2", 'O');
+            Console.WriteLine("Please enter the name of Player 2");
+            string player2Name = Console.ReadLine();
+            while(player2Name == "")
+            {
+                Console.WriteLine("Name cannot be empty. Please enter the name of Player 2");
+                player2Name = Console.ReadLine();
+            }
+
+            player1 = new HumanPlayer(player1Name, 'X');
+            player2 = new HumanPlayer(player2Name, 'O');
         }
         else if(playerChoice == "2")
         {
-            Console.WriteLine("You have chosen Human Vs AI");
+            Console.WriteLine("You have chosen Human Vs AI Computer");
 
-            player1 = new ComputerPlayer("AI Computer", 'X');
-            player2 = new HumanPlayer("Human Player", 'O');
+            player1 = new ComputerPlayer("AI Computer", 'X', gameBoard);
+
+            Console.WriteLine("Please enter the name of Humna Player");
+            string humanPlayerName = Console.ReadLine();
+            while(humanPlayerName == "")
+            {
+                Console.WriteLine("Name cannot be empty. Please enter the name of Human Player");
+                humanPlayerName = Console.ReadLine();
+            }
+
+            player2 = new HumanPlayer(humanPlayerName, 'O');
 
         }
         currentPlayer = player1;
