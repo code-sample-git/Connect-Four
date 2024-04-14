@@ -20,6 +20,12 @@ public class GameController
 
         string playerChoice = Console.ReadLine();
 
+        // Loop until a valid input is received
+        while (playerChoice != "1" && playerChoice != "2")
+        {
+            Console.WriteLine("Invalid input. Please enter '1' for Human vs Human or '2' for Human vs AI.");
+            playerChoice = Console.ReadLine();
+        }
 
         if (playerChoice == "1")
         {
