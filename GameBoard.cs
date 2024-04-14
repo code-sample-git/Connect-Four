@@ -54,55 +54,53 @@ public class GameBoard
 
  public bool CheckForWin(char disc)
  {
-        bool win = false;
-        // Check horizontal, vertical, and diagonal lines for a win.
-        for (int i = 8; i >= 1; --i)
+        // Check for horizontal, vertical, and diagonal wins
+
+        // Horizontal and vertical win conditions
+        for (int i = 0; i < Rows; i++)
         {
-
-            for (int j = 9; j >= 1; --j)
+            for (int j = 0; j < Columns - 3; j++) // leave space for 4 consecutive discs
             {
-
-                if (board[i, j] == disc &&
-                    board[i + 1, j + 1] == disc &&
-                    board[i + 2, j + 2] == disc &&
-                    board[i + 3, j + 3] == disc)
-                {
+                // Horizontal check
+                if (board[i, j] == disc && board[i, j + 1] == disc && board[i, j + 2] == disc && board[i, j + 3] == disc)
                     return true;
-                }
-
-
-                if (board[i, j] == disc &&
-                    board[i, j + 1] == disc &&
-                    board[i, j + 2] == disc &&
-                    board[i, j + 3] == disc)
-                {
-                    return true;
-                }
-
-                if (board[i, j] == disc &&
-                    board[i + 1, j] == disc &&
-                    board[i + 2, j] == disc &&
-                    board[i + 3, j] == disc)
-                {
-                    return true;
-                }
-
-                if (board[i, j] == disc &&
-                    board[i - 1, j + 1] == disc &&
-                    board[i - 2, j + 2] == disc &&
-                    board[i - 3, j + 3] == disc)
-                {
-                    return true;
-
-                }
-
             }
+        }
 
+        for (int i = 0; i < Rows - 3; i++) // leave space for 4 consecutive discs vertically
+        {
+            for (int j = 0; j < Columns; j++)
+            {
+                // Vertical check
+                if (board[i, j] == disc && board[i + 1, j] == disc && board[i + 2, j] == disc && board[i + 3, j] == disc)
+                    return true;
+            }
+        }
+
+        // Diagonal win conditions
+        for (int i = 0; i < Rows - 3; i++)
+        {
+            for (int j = 0; j < Columns - 3; j++)
+            {
+                // Diagonal down-right
+                if (board[i, j] == disc && board[i + 1, j + 1] == disc && board[i + 2, j + 2] == disc && board[i + 3, j + 3] == disc)
+                    return true;
+            }
+        }
+
+        for (int i = 3; i < Rows; i++) // start from row 3 to have space for diagonal up-right
+        {
+            for (int j = 0; j < Columns - 3; j++)
+            {
+                // Diagonal up-right
+                if (board[i, j] == disc && board[i - 1, j + 1] == disc && board[i - 2, j + 2] == disc && board[i - 3, j + 3] == disc)
+                    return true;
+            }
         }
 
         return false;
 
-}
+    }
 
     public void DisplayBoard()
     {

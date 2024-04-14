@@ -3,8 +3,6 @@ using System;
 public class GameController
 {
     private GameBoard gameBoard;
-    public Player DiscSymbol;
-    public Player playerName;
     private Player player1;
     private Player player2;
     private Player currentPlayer;
@@ -18,23 +16,25 @@ public class GameController
     {
         Console.WriteLine("Please Choose Your Game mode (Human vs Human, Human vs AI);");
         Console.WriteLine("1. Human Vs Human");
-        Console.WriteLine("2. Human Vs AI");
+        Console.WriteLine("2. AI Vs Human");
 
         string playerChoice = Console.ReadLine();
 
-        player1 = new HumanPlayer("Player 1", 'X');
 
         if (playerChoice == "1")
         {
             Console.WriteLine("You have chosen Human Vs Human");
 
+            player1 = new HumanPlayer("Player 1", 'X');
             player2 = new HumanPlayer("Player 2", 'O');
         }
         else if(playerChoice == "2")
         {
             Console.WriteLine("You have chosen Human Vs AI");
 
-            player2 = new ComputerPlayer("Computer", 'O');
+            player1 = new ComputerPlayer("AI Computer", 'X');
+            player2 = new HumanPlayer("Human Player", 'O');
+
         }
         currentPlayer = player1;
     }
@@ -74,4 +74,5 @@ public class GameController
     {
         currentPlayer = currentPlayer == player1 ? player2 : player1;
     }
+
 }
