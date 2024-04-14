@@ -53,7 +53,7 @@ public class GameController
         {
             Console.WriteLine("You have chosen Human Vs AI Computer");
 
-            player1 = new ComputerPlayer("AI Computer", 'X', gameBoard);
+            player1 = new ComputerPlayer("AI Computer", 'X');
 
             Console.WriteLine("Please enter the name of Humna Player");
             string humanPlayerName = Console.ReadLine();

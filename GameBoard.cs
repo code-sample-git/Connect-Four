@@ -2,8 +2,8 @@ using System;
 
 public class GameBoard
 {
-    private const int Rows = 9;
-    public const int Columns = 10;
+    private const int Rows = 6;
+    public const int Columns = 9;
     private char[,] board;
 
     public GameBoard()
