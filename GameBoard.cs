@@ -108,7 +108,22 @@ public class GameBoard
         {
             for (int col = 0; col < Columns; col++)
             {
-                Console.Write(board[row, col] + " ");
+                char cell = board[row, col];
+                if (cell == 'X')
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;  // Set text color to red
+                }
+                else if (cell == 'O')
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue; // Set text color to blue
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.White; // Default color for empty slots
+                }
+
+                Console.Write(cell + " ");
+                Console.ResetColor(); // Reset to default colors
             }
             Console.WriteLine();
         }
